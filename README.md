@@ -39,26 +39,26 @@ Before modeling, I used LabelEncoder from sklearn.preprocessing to convert the s
 
 ### Modeling
 
-SVM
+**SVM**
 - Best set of hyperparameters: {'C': 1, 'degree': 2, 'gamma': 0.1, 'kernel': 'rbf'}
 - Private score = 0.71555; Public score = 0.72864
 
-Random Forest
+**Random Forest**
 - Best set of hyperparameters: {'n_estimators': np.int64(50), 'min_samples_split': np.int64(4), 'min_samples_leaf': np.int64(1), 'max_features': 'log2', 'max_depth': None, 'class_weight': None, 'bootstrap': False}
 - Private score = 0.73777; Public score = 0.79396 (all features)
 - Private score = 0.74666; Public score = 0.79396 (top 20 feature importance)
 - Private score = 0.74222; Public score = 0.76884 (top 10 feature importance)
 
-XGBoost
+**XGBoost**
 - Best set of hyperparameters: {'subsample': np.float64(0.9), 'scale_pos_weight': 5, 'reg_lambda': 0.1, 'reg_alpha': 0, 'n_estimators': np.int64(250), 'min_child_weight': np.int64(2), 'max_depth': np.int64(9), 'learning_rate': 0.1, 'gamma': 0, 'colsample_bytree': np.float64(0.9)}
 - Private score = 0.78666; Public score =  0.76381
 
-Ensemble Learning
+**Ensemble Learning**
 - Estimator: SVC, RF, XGB
 - Private score = 0.78222; Public score = 0.76884 (Hard voting)
 - Private score = 0.77777; Public score = 0.76381 (Soft voting)
 
-Model Stacking
+**Model Stacking**
 - Estimator: SVC, RF, XGB
 - Meta model: Logistic Regression
 - Private score = 0.76888; Public score = 0.76381
